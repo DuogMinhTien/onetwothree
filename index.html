@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>One Two Three</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="noselect">
+	<div id="LoadingGame" style="display: none">
+		<p id="TextLoading">ONE TWO THREE</p>
+		<img id="VSStartLoad" src="assets/img/vs.png">	
+	</div>
+	<div id="mainGame">
+		<div id="balanceDiv">
+			<h1>Balance</h1>
+			<p>1000000000đ</p>
+		</div>
+		<span id="settingIcon" class="material-icons" onclick="openSetting()">settings</span>
+		<div id="main">
+
+			<img class="playGame" id="player" style="display: none" src="assets/img/cayBUA.png">
+
+			<div id="playerOri">
+				<div id="PlayerImg">
+					<img src="assets/img/player.png" />
+				</div>
+			</div>
+
+			<img id="VSStart" src="assets/img/vs.png" style="display: none">
+
+			<button id="PlayButton" onclick="PlayNow()">Play<br/>Game</button>
+
+			<img class="playGame" id="robot" style="display: none" src="assets/img/cayBUA.png">
+
+			<img id="robotReady" src="assets/img/robot.jpg" />
+		</div>
+		<div id="playAgainDiv" style="display: none">
+			<div id="StatusFight" style="background-color: rgba(50,205,50,0.8);">
+				<p id="TextFight">You win</p>
+			</div>
+			<button id="PlayAgain" onclick="playAgain()">Play Again</button>
+		</div>
+		<div id="readyPlay">
+			<input id="moneySL" type="number" name="" placeholder="Enter money..."/>
+			<div id="chooseStyle">
+				<button id="bua" class="buttonChoose" onclick="bua()"><img src="assets/img/cayBUA.png"/></button>
+				<button id="giay" class="buttonChoose" onclick="giay()"><img src="assets/img/paper.png"/></button>
+				<button id="keo" class="buttonChoose" onclick="keo()"><img src="assets/img/cayKeo.png"/></button>
+			</div>
+		</div>
+		<div id="moneyDiv" style="display: none">
+			<img id="money10" class="grid-item" src="assets/img/10nghin.jpg" />
+			<img id="money10" class="grid-item" src="assets/img/20nghin.jpg" />
+			<img id="money10" class="grid-item" src="assets/img/50nghin.jpg" />
+			<img id="money10" class="grid-item" src="assets/img/10nghin.jpg" />
+			<img id="money10" class="grid-item" src="assets/img/10nghin.jpg" />
+			<img id="money10" class="grid-item" src="assets/img/10nghin.jpg" />
+		</div>
+		<div id="notifer"class="modal" style="display: none">
+			<div id="mainNoti" class="mainModal">
+				<p id="closeModal" onclick="closeNoti()">X</p>
+				<div class="statusNoti" id="checkSUCCESS" style="display: none">
+					<div id="success1"></div>
+					<div id="success2"></div>
+				</div>
+				<div class="statusNoti" id="checkFAIL" style="display: none">
+					<div id="fail1"></div>
+					<div id="fail2"></div>
+				</div>
+				<h2 id="notiText"></h2>
+				<p id="desNoti"></p>
+			</div>
+		</div>
+		<div id="settingModal" class="modal" style="display: none;">
+			<div id="mainSetting" class="mainModal">
+				<div id="showcontentSetting" style="display: none">
+					<h1>SETTING</h1>
+					<hr/>
+					<span id="closeSetting" class="material-icons" onclick="closeSetting()">close</span>
+					<div class="chooseSetting">
+						<p class="titleSetting">Change avatar robot</p>
+						<span class="nextStepSetting material-icons">arrow_forward_ios</span></p>
+					</div>
+					<hr/>
+				</div>
+				<div>
+					<h1 style="font-size: 2.5vw">CHANGE AVATAR ROBOT</h1>
+					<div id="avatarRobotDiv">
+						<img class="avatarRobot" src="assets/img/robot.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="assets/img/robot.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="assets/img/robot.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="assets/img/robot.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="assets/img/robot.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="assets/img/robot.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,9 +1,12 @@
 $(document).ready(function() {
+	$('#LoadingGame').css('display','none');
+	$('#mainGame').css('display','');
 	const modalSetting = document.getElementById('settingModal');
 	const modalSettingContainer = document.getElementById('mainSetting');
 	modalSetting.addEventListener('click', function () {
 		$('#settingModal').css('display','none');
 		$('#showcontentSetting').css('display','none');
+		$('#showRobotAvatarSetting').css('display','none');
 	});
 	modalSettingContainer.addEventListener('click', function (event) {
 		event.stopPropagation()
@@ -132,10 +135,40 @@ function playAgain() {
 
 function openSetting() {
 	$('#settingModal').css('display','');
-	//setTimeout(() => $('#showcontentSetting').css('display',''),500);
+	setTimeout(() => $('#showcontentSetting').css('display',''),500);
 }
 
 function closeSetting() {
 	$('#settingModal').css('display','none');
 	$('#showcontentSetting').css('display','none');
+}
+
+function AvatarRobot() {
+	$('#showcontentSetting').css('display','none');
+	$('#showRobotAvatarSetting').css('display','');
+}
+
+function returnAvatarRobot(){
+	$('#showRobotAvatarSetting').css('display','none');
+	$('#showcontentSetting').css('display','');
+}
+
+var idRobot = 1;
+var pathRobot = ""
+
+function changeRobot(index) {
+	document.getElementById("robot"+idRobot).classList.remove("changerobotchoose");
+	document.getElementById("robot"+idRobot).classList.add("changerobothover");
+
+	idRobot = index;
+
+	var idRobotImg = "robot"+index;
+	pathRobot = "assets/img/"+idRobotImg+".jpg";
+
+	document.getElementById(idRobotImg).classList.remove("changerobothover");
+	document.getElementById(idRobotImg).classList.add("changerobotchoose");
+
+	mynoti ("success","Change Avatar SUccess","Changed robot avatar successfully. Let's keep playing the game");
+
+	setTimeout ("$('#robotReady').attr('src',pathRobot)",1000);
 }

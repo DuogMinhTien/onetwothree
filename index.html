@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>One Two Three</title>
+	<title>Game One Two Three</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="assets/js/script.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="noselect">
-	<div id="LoadingGame" style="display: none">
+	<div id="LoadingGame">
 		<p id="TextLoading">ONE TWO THREE</p>
 		<img id="VSStartLoad" src="assets/img/vs.png">	
 	</div>
-	<div id="mainGame">
+	<div id="mainGame"  style="display: none">
 		<div id="balanceDiv">
 			<h1>Balance</h1>
 			<p>1000000000đ</p>
@@ -24,17 +24,17 @@
 
 			<div id="playerOri">
 				<div id="PlayerImg">
-					<img src="assets/img/player.png" />
+					<img src="assets/img/player.png" alt="Avatar Player"/>
 				</div>
 			</div>
 
-			<img id="VSStart" src="assets/img/vs.png" style="display: none">
+			<img id="VSStart" src="assets/img/vs.png" alt="VS Symbol" style="display: none">
 
 			<button id="PlayButton" onclick="PlayNow()">Play<br/>Game</button>
 
 			<img class="playGame" id="robot" style="display: none" src="assets/img/cayBUA.png">
 
-			<img id="robotReady" src="assets/img/robot.jpg" />
+			<img id="robotReady" src="assets/img/robot1.jpg" alt="Avatar Robot" />
 		</div>
 		<div id="playAgainDiv" style="display: none">
 			<div id="StatusFight" style="background-color: rgba(50,205,50,0.8);">
@@ -79,45 +79,22 @@
 					<h1>SETTING</h1>
 					<hr/>
 					<span id="closeSetting" class="material-icons" onclick="closeSetting()">close</span>
-					<div class="chooseSetting">
+					<div class="chooseSetting" onclick="AvatarRobot()">
 						<p class="titleSetting">Change avatar robot</p>
 						<span class="nextStepSetting material-icons">arrow_forward_ios</span></p>
 					</div>
 					<hr/>
 				</div>
-				<div>
+				<div id="showRobotAvatarSetting" style="display: none">
+					<span onclick="returnAvatarRobot()" class="back-icon material-icons">arrow_back_ios</span>
 					<h1 style="font-size: 2.5vw">CHANGE AVATAR ROBOT</h1>
 					<div id="avatarRobotDiv">
-						<img class="avatarRobot" src="assets/img/robot.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="assets/img/robot.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="assets/img/robot.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="assets/img/robot.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="assets/img/robot.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="assets/img/robot.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
-						<img class="avatarRobot" src="https://i.pinimg.com/originals/60/3f/7b/603f7b65c954aaa160ac6cfa8866c8ee.jpg">
+						<img id="robot1" onclick="changeRobot(1)" class="avatarRobot changerobotchoose" src="assets/img/robot1.jpg" />
+						<img id="robot2" onclick="changeRobot(2)" class="avatarRobot changerobothover" src="assets/img/robot2.jpg" />
+						<img id="robot3" onclick="changeRobot(3)" class="avatarRobot changerobothover" src="assets/img/robot3.jpg" />
+						<img id="robot4" onclick="changeRobot(4)" class="avatarRobot changerobothover" src="assets/img/robot4.jpg" />
+						<img id="robot5" onclick="changeRobot(5)" class="avatarRobot changerobothover" src="assets/img/robot5.jpg" />
+						<img id="robot6" onclick="changeRobot(6)" class="avatarRobot changerobothover" src="assets/img/robot6.jpg" />
 					</div>
 				</div>
 			</div>

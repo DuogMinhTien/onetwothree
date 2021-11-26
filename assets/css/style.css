@@ -75,6 +75,7 @@ body {
 	right: 5%;
 	clip-path: circle();
 	width: 18%;
+
 }
 
 #VSStart {
@@ -225,12 +226,16 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 5;
+	z-index: 10000;
 	background-color: rgba(0,0,0,0.4);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+}
+
+#notifer {
+	z-index: 100000;
 }
 
 #mainNoti {
@@ -285,6 +290,12 @@ body {
 }
 
 #showcontentSetting {
+	-webkit-animation: showcontentSettinganim 1s linear;
+	-o-animation: showcontentSettinganim 1s linear;
+	animation: showcontentSettinganim 1s linear;
+}
+
+#showRobotAvatarSetting {
 	-webkit-animation: showcontentSettinganim 1s linear;
 	-o-animation: showcontentSettinganim 1s linear;
 	animation: showcontentSettinganim 1s linear;
@@ -707,16 +718,52 @@ body {
 	 background-color: rgb(20,20,20,0.9);
 	 border-radius: 10px;
 	 border: 2px solid orange;
+	 overflow: auto;
+	 height: 28vh;
 }
 
 .avatarRobot {
-	width: 80px;
-	height: 80px;
+	width: 10vh;
+	height: 10vh;
 	border-radius: 50px;
 	margin: 10px;
 }
 
-.avatarRobot:hover {
+.changerobothover:hover {
 	cursor: pointer;
-	border: 5px solid green;
+	border: 5px solid green !important;
+}
+
+.changerobotchoose {
+	border: 5px solid red;
+}
+
+.back-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 15px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.back-icon:hover {
+	cursor: pointer;
+	opacity: 0.7;
+	background-color: rgba(255,255,255,1);
+	color: rgb(35,35,35);
+	filter: brightness(2);
+}
+
+#avatarRobotDiv::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+ 
+/* Handle */
+#avatarRobotDiv::-webkit-scrollbar-thumb {
+  background: rgba(255,165,0,0.8);
+  border-radius: 10px; 
 }
